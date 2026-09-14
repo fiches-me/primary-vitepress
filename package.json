@@ -1,0 +1,40 @@
+{
+  "name": "primary-vitepress",
+  "version": "1.0.4",
+  "description": "Primary implementation on Vitepress",
+  "type": "module",
+  "main": "./index.js",
+  "module": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./config": "./config.js",
+    "./plugins/mermaid": "./plugins/vitepress-mermaid/index.ts",
+    "./plugins/task-checkbox": "./plugins/markdown-it-task-checkbox.mts",
+    "./style": "./layout.css"
+  },
+  "files": [
+    "index.js",
+    "config.js",
+    "*.css",
+    "plugins",
+    "README.md"
+  ],
+  "keywords": [
+    "vitepress",
+    "vitepress-theme",
+    "theme",
+    "mermaid",
+    "markdown-it"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "vitepress": "^1.2.3"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
+  "dependencies": {
+    "mermaid": "^10.0.0"
+  }
+}

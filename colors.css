@@ -1,0 +1,109 @@
+/*
+ * Primary palette bridge
+ *
+ * These values mirror the Primary Obsidian theme. VitePress' variables are
+ * mapped to the same semantic surfaces so the whole application changes
+ * together when the dark-mode class is toggled.
+ */
+:root {
+  --color-l-gray-10: hsla(36, 38%, 98%, 1);
+  --color-l-gray-20: hsla(35, 36%, 96%, 1);
+  --color-l-gray-30: hsla(35, 37%, 92%, 1);
+  --color-l-gray-40: hsla(34, 34%, 90%, 1);
+  --color-l-gray-50: hsla(36, 35%, 88%, 1);
+  --color-l-gray-60: hsla(37, 38%, 83%, 1);
+  --color-l-gray-70: hsla(34, 37%, 70%, 1);
+  --color-l-gray-80: hsla(34, 29%, 60%, 1);
+  --color-l-gray-90: hsla(31, 23%, 50%, 1);
+  --color-l-gray-100: hsla(35, 28%, 40%, 1);
+  --color-l-gray-120: hsla(36, 32%, 30%, 1);
+  --color-l-gray-130: hsla(31, 45%, 24%, 1);
+  --color-l-gray-140: hsla(33, 54%, 17%, 1);
+  --color-l-red-30: hsla(4, 56%, 48%, 1);
+  --color-l-orange-30: hsla(18, 69%, 50%, 1);
+  --color-l-yellow-30: hsla(40, 79%, 47%, 1);
+  --color-l-green-30: hsla(149, 50%, 39%, 1);
+  --color-l-blue-30: hsla(200, 64%, 37%, 1);
+  --color-l-violet-30: hsla(275, 37%, 43%, 1);
+  --color-primary: #ff954f;
+  --primary-shadow: 0 1px 2px rgba(49, 37, 28, 0.08);
+
+  --vp-c-bg: var(--color-l-gray-20);
+  --vp-c-bg-alt: var(--color-l-gray-40);
+  --vp-c-bg-elv: var(--color-l-gray-10);
+  --vp-c-bg-soft: rgba(166, 150, 142, 0.14);
+  --vp-c-text-1: var(--color-l-gray-130);
+  --vp-c-text-2: var(--color-l-gray-100);
+  --vp-c-text-3: var(--color-l-gray-80);
+  --vp-c-divider: var(--color-l-gray-50);
+  --vp-c-border: var(--color-l-gray-60);
+  --vp-c-brand-1: var(--color-primary);
+  --vp-c-brand-2: var(--color-l-red-30);
+  --vp-c-brand-3: var(--color-l-orange-30);
+  --vp-c-brand-soft: rgba(228, 87, 78, 0.16);
+  --vp-c-gutter: var(--color-l-gray-40);
+  --vp-code-bg: var(--color-l-gray-30);
+  --vp-code-color: var(--color-l-gray-130);
+  --vp-sidebar-bg-color: var(--color-l-gray-40);
+  --vp-nav-bg-color: color-mix(in srgb, var(--color-l-gray-40) 92%, transparent);
+}
+
+.dark {
+  --color-d-gray-10: hsla(32, 48%, 85%, 1);
+  --color-d-gray-20: hsla(34, 39%, 74%, 1);
+  --color-d-gray-30: hsla(34, 31%, 68%, 1);
+  --color-d-gray-40: hsla(35, 27%, 55%, 1);
+  --color-d-gray-50: hsla(34, 24%, 40%, 1);
+  --color-d-gray-60: hsla(33, 27%, 30%, 1);
+  --color-d-gray-70: hsla(31, 27%, 24%, 1);
+  --color-d-gray-80: hsla(28, 22%, 18%, 1);
+  --color-d-gray-90: hsla(33, 20%, 16%, 1);
+  --color-d-gray-100: hsla(30, 19%, 14%, 1);
+  --color-d-gray-120: hsla(29, 16%, 12%, 1);
+  --color-d-gray-140: hsla(32, 21%, 8%, 1);
+  --color-d-red-30: hsla(4, 88%, 61%, 1);
+  --color-d-orange-30: hsla(22, 82%, 47%, 1);
+  --color-d-yellow-30: hsla(40, 78%, 48%, 1);
+  --color-d-green-30: hsla(155, 78%, 29%, 1);
+  --color-d-blue-30: hsla(197, 48%, 49%, 1);
+  --color-d-violet-30: hsla(239, 45%, 51%, 1);
+  --primary-shadow: 0 1px 2px rgba(0, 0, 0, 0.24);
+
+  --vp-c-bg: var(--color-d-gray-120);
+  --vp-c-bg-alt: var(--color-d-gray-140);
+  --vp-c-bg-elv: var(--color-d-gray-100);
+  --vp-c-bg-soft: rgba(166, 150, 142, 0.16);
+  --vp-c-text-1: var(--color-d-gray-20);
+  --vp-c-text-2: var(--color-d-gray-40);
+  --vp-c-text-3: var(--color-d-gray-50);
+  --vp-c-divider: var(--color-d-gray-100);
+  --vp-c-border: var(--color-d-gray-80);
+  --vp-c-brand-1: var(--color-primary);
+  --vp-c-brand-2: var(--color-d-red-30);
+  --vp-c-brand-3: var(--color-d-orange-30);
+  --vp-c-brand-soft: rgba(228, 87, 78, 0.2);
+  --vp-c-gutter: var(--color-d-gray-140);
+  --vp-code-bg: var(--color-d-gray-100);
+  --vp-code-color: var(--color-d-gray-20);
+  --vp-sidebar-bg-color: var(--color-d-gray-140);
+  --vp-nav-bg-color: color-mix(in srgb, var(--color-d-gray-140) 92%, transparent);
+}
+
+body {
+  color: var(--vp-c-text-1);
+  background: var(--vp-c-bg-alt);
+}
+
+strong { color: var(--vp-c-brand-1); }
+em { color: var(--color-l-blue-30); }
+strong em, em strong { color: var(--vp-c-text-1); }
+.dark em { color: #59b6d8; }
+
+.vp-doc a {
+  color: var(--color-l-green-30);
+  text-decoration-color: color-mix(in srgb, currentColor 45%, transparent);
+}
+.dark .vp-doc a { color: #58b88b; }
+.vp-doc a:hover { color: var(--vp-c-brand-1); }
+.vp-doc mark { color: inherit; background: rgba(234, 181, 52, 0.28); }
+.vp-doc img { border-radius: 6px; }

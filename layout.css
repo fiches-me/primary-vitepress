@@ -1,0 +1,94 @@
+/* Obsidian's app-like frame: chrome around one quiet editor surface. */
+:root {
+  --vp-nav-height: 52px;
+  --vp-sidebar-width: 264px;
+  --editor-radius: 8px;
+}
+
+html, body, #app { min-height: 100%; }
+body { overflow-x: hidden; }
+
+.VPNav {
+  background: var(--vp-nav-bg-color);
+  border-bottom: 1px solid var(--vp-c-divider);
+  backdrop-filter: blur(12px);
+}
+.VPNavBar { background: transparent; }
+.VPNavBarTitle .title {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.VPNavBarMenuLink {
+  border-radius: 5px;
+  transition: background-color .15s ease, color .15s ease;
+}
+.VPNavBarMenuLink:hover,
+.VPNavBarMenuLink.active {
+  color: var(--vp-c-text-1);
+  background: var(--vp-c-bg-soft);
+}
+
+.VPSidebar {
+  background: var(--vp-sidebar-bg-color);
+  border-right: 1px solid var(--vp-c-divider);
+  padding: calc(var(--vp-nav-height) + 18px) 14px 24px;
+}
+.VPSidebarItem.level-0 > .item > .text {
+  color: var(--vp-c-text-3);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.VPSidebarItem .text {
+  border-radius: 5px;
+  transition: background-color .15s ease, color .15s ease;
+}
+.VPSidebarItem.is-active > .item .text,
+.VPSidebarItem .item:hover .text {
+  color: var(--vp-c-text-1);
+  background: var(--vp-c-bg-soft);
+}
+
+.VPContent {
+  background: var(--vp-c-bg-alt);
+}
+.VPDoc {
+  max-width: 1120px;
+  margin: 20px auto 40px;
+  padding: 34px 42px 56px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: var(--editor-radius);
+  background: var(--vp-c-bg);
+  box-shadow: var(--primary-shadow);
+}
+.vp-doc { color: var(--vp-c-text-1); }
+.vp-doc h1, .vp-doc h2, .vp-doc h3, .vp-doc h4 {
+  color: var(--vp-c-text-1);
+  letter-spacing: -0.025em;
+}
+.vp-doc h1 { font-size: 2.15rem; }
+.vp-doc h2 { border-top: 1px solid var(--vp-c-divider); padding-top: 1.6rem; }
+.vp-doc hr { border-color: var(--vp-c-divider); }
+.vp-doc blockquote {
+  border-left: 3px solid var(--vp-c-brand-1);
+  background: var(--vp-c-bg-soft);
+  border-radius: 0 5px 5px 0;
+  padding: 8px 16px;
+}
+.vp-doc table { display: table; width: 100%; }
+.vp-doc th { background: var(--vp-c-bg-alt); }
+.vp-doc tr { border-color: var(--vp-c-divider); }
+.vp-doc code { border-radius: 4px; }
+
+.VPFooter { border-top: 1px solid var(--vp-c-divider); }
+.VPDoc .container { max-width: none; }
+
+@media (max-width: 768px) {
+  .VPDoc {
+    margin: 0;
+    padding: 28px 22px 48px;
+    border: 0;
+    border-radius: 0;
+  }
+}
