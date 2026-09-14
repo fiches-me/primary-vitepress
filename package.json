@@ -8,8 +8,8 @@
   "exports": {
     ".": "./index.js",
     "./config": "./config.js",
-    "./plugins/mermaid": "./plugins/vitepress-mermaid/index.ts",
-    "./plugins/task-checkbox": "./plugins/markdown-it-task-checkbox.mts",
+    "./plugins/mermaid": "./plugins/vitepress-mermaid/index.js",
+    "./plugins/task-checkbox": "./plugins/markdown-it-task-checkbox.js",
     "./style": "./layout.css"
   },
   "files": [

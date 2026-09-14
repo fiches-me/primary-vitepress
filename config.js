@@ -1,5 +1,5 @@
-import { mermaidPlugin } from './plugins/vitepress-mermaid/index.ts'
-import { taskCheckboxPlugin } from './plugins/markdown-it-task-checkbox.mts'
+import { mermaidPlugin } from './plugins/vitepress-mermaid/index.js'
+import { taskCheckboxPlugin } from './plugins/markdown-it-task-checkbox.js'
 
 /**
  * VitePress configuration extension for Primary Theme.
@@ -15,7 +15,7 @@ export const primaryThemeConfig = {
   },
   vite: {
     ssr: {
-      noExternal: ['vitepress-theme-primary', 'mermaid']
+      noExternal: ['primary-vitepress', 'mermaid']
     }
   }
 }

@@ -1,7 +1,5 @@
-import type MarkdownIt from 'markdown-it'
-
-export const mermaidPlugin = (md: MarkdownIt) => {
-  const fence = md.renderer.rules.fence!
+export const mermaidPlugin = (md) => {
+  const fence = md.renderer.rules.fence
 
   // Override the fence renderer
   md.renderer.rules.fence = (...args) => {
