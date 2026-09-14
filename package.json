@@ -1,6 +1,6 @@
 {
   "name": "primary-vitepress",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "Primary implementation on Vitepress",
   "type": "module",
   "main": "./index.js",
@@ -35,6 +35,11 @@
     "vue": "^3.0.0"
   },
   "dependencies": {
+    "@mdit/plugin-footnote": "^1.1.1",
+    "markdown-it-mathjax3": "^5.2.0",
+    "markdown-it-obsidian": "^1.1.0",
+    "markdown-it-obsidian-callouts": "^0.3.4",
+    "markdown-it-task-lists": "^2.1.1",
     "mermaid": "^10.0.0"
   }
 }
