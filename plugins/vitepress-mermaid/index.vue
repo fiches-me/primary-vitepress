@@ -1,62 +1,67 @@
 <template>
-  <div :key="theme" ref="diagramRef" class="mermaid" :style="{ minHeight: fixedHeight }">
+  <div
+    :key="theme"
+    ref="diagramRef"
+    class="mermaid"
+    :style="{ minHeight: fixedHeight }"
+  >
     {{ value }}
   </div>
 </template>
 
-<script setup>
-import { useData } from 'vitepress'
-import { computed, ref, watch, nextTick, onMounted } from 'vue'
+<script setup lang="ts">
+import { useData } from "vitepress";
+import { computed, ref, watch, nextTick, onMounted } from "vue";
 
-const props = defineProps({
-  value: String
-})
+defineProps<{
+  value?: string;
+}>();
 
-const { isDark } = useData()
-const theme = computed(() => isDark.value ? 'dark' : 'default')
+const { isDark } = useData();
+const theme = computed(() => (isDark.value ? "dark" : "default"));
 
-const diagramRef = ref(null)
-const fixedHeight = ref('auto')
+const diagramRef = ref<HTMLElement | null>(null);
+const fixedHeight = ref<string>("auto");
 
 async function renderDiagram() {
-  if (typeof window === 'undefined') return
-  const element = diagramRef.value
-  if (!element) return
+  if (typeof window === "undefined") return;
+  const element = diagramRef.value;
+  if (!element) return;
 
-  await nextTick()
+  await nextTick();
 
   try {
-    const { default: mermaid } = await import('mermaid')
+    const { default: mermaid } = await import("mermaid");
     mermaid.initialize({
       startOnLoad: false,
       theme: theme.value,
-    })
+    });
 
-    element.removeAttribute('data-processed')
+    element.removeAttribute("data-processed");
     await mermaid.run({
-      nodes: [element]
-    })
+      nodes: [element],
+    });
 
     setTimeout(() => {
       if (element) {
-        const height = element.offsetHeight
+        const height = element.offsetHeight;
         if (height > 0) {
-          fixedHeight.value = `${height}px`
+          fixedHeight.value = `${height}px`;
         }
       }
-    }, 100)
+    }, 100);
   } catch (error) {
-    console.error('Mermaid rendering error:', error)
+    console.error("Mermaid rendering error:", error);
   }
 }
 
 onMounted(() => {
-  renderDiagram()
-})
+  renderDiagram();
+});
 
 watch(theme, () => {
-  renderDiagram()
-})
+  renderDiagram();
+});
 </script>
 
 <style scoped>

@@ -3,22 +3,39 @@
   "version": "1.1.1",
   "description": "Primary implementation on Vitepress",
   "type": "module",
-  "main": "./index.js",
-  "module": "./index.js",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "types": "./index.ts",
   "exports": {
-    ".": "./index.js",
-    "./config": "./config.js",
-    "./plugins/mermaid": "./plugins/vitepress-mermaid/index.js",
-    "./plugins/task-checkbox": "./plugins/markdown-it-task-checkbox.js",
+    ".": {
+      "types": "./index.ts",
+      "import": "./index.ts"
+    },
+    "./config": {
+      "types": "./config.ts",
+      "import": "./config.ts"
+    },
+    "./plugins/mermaid": {
+      "types": "./plugins/vitepress-mermaid/index.ts",
+      "import": "./plugins/vitepress-mermaid/index.ts"
+    },
+    "./plugins/task-checkbox": {
+      "types": "./plugins/markdown-it-task-checkbox.ts",
+      "import": "./plugins/markdown-it-task-checkbox.ts"
+    },
     "./style": "./layout.css"
   },
   "files": [
-    "index.js",
-    "config.js",
+    "index.ts",
+    "config.ts",
     "*.css",
     "plugins",
+    "env.d.ts",
     "README.md"
   ],
+  "scripts": {
+    "typecheck": "tsc"
+  },
   "keywords": [
     "vitepress",
     "vitepress-theme",
@@ -28,7 +45,10 @@
   ],
   "license": "MIT",
   "devDependencies": {
+    "@types/markdown-it": "^14.2.0",
+    "@types/node": "^26.5.1",
     "prettier": "^3.3.3",
+    "typescript": "^5.5.4",
     "vitepress": "^1.2.3"
   },
   "peerDependencies": {
@@ -40,6 +60,6 @@
     "markdown-it-obsidian": "^1.1.0",
     "markdown-it-obsidian-callouts": "^0.3.4",
     "markdown-it-task-lists": "^2.1.1",
-    "mermaid": "^10.0.0"
+    "mermaid": "^12.0.0"
   }
 }

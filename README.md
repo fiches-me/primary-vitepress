@@ -12,27 +12,28 @@ npm install primary-vitepress
 
 ## ⚙️ Setup
 
-### 1. Enable Theme in `.vitepress/theme/index.js`
+### 1. Enable Theme in `.vitepress/theme/index.ts` (or `.js`)
 
-```js
-import PrimaryTheme from 'primary-vitepress'
-import './custom.css' // Optional: your own CSS overrides
+```ts
+import type { Theme } from "vitepress";
+import PrimaryTheme from "primary-vitepress";
+import "./custom.css"; // Optional: your own CSS overrides
 
 export default {
-  extends: PrimaryTheme
-}
+  extends: PrimaryTheme,
+} satisfies Theme;
 ```
 
-### 2. Enable Plugins in `.vitepress/config.js`
+### 2. Enable Plugins in `.vitepress/config.ts` (or `.js`)
 
 To enable the included markdown plugins (Mermaid diagrams & custom task checkboxes), extend the theme config in your VitePress configuration:
 
-```js
-import { defineConfig } from 'vitepress'
-import { primaryThemeConfig } from 'primary-vitepress/config'
+```ts
+import { defineConfig } from "vitepress";
+import { primaryThemeConfig } from "primary-vitepress/config";
 
 export default defineConfig({
   extends: primaryThemeConfig,
   // Your site config here...
-})
-``
+});
+```
