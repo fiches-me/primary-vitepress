@@ -1,16 +1,14 @@
 import type { MarkdownRenderer, UserConfig } from "vitepress";
-import { mermaidPlugin } from "./plugins/vitepress-mermaid";
-import { taskCheckboxPlugin } from "./plugins/markdown-it-task-checkbox";
-// import { footnote } from "@mdit/plugin-footnote";
+import { mermaidPlugin } from "./plugins/vitepress-mermaid/index.js";
+import { taskCheckboxPlugin } from "./plugins/markdown-it-task-checkbox.js";
 import mdItTaskLists from "markdown-it-task-lists";
 import mdItObsidianCallouts from "markdown-it-obsidian-callouts";
 import markdownItObsidian from "markdown-it-obsidian";
-// import mathjax3 from "markdown-it-mathjax3";
 
 /**
  * VitePress configuration extension for Primary Theme.
  * Enables markdown plugins for Mermaid diagrams and interactive task checkboxes,
- * plus Obsidian callouts, footnotes, and mathjax3 for Obsidian compatibility,
+ * plus Obsidian callouts and Obsidian compatibility,
  * and sets SSR noExternal to ensure CSS and modules are processed by Vite.
  */
 export const primaryThemeConfig: UserConfig = {
@@ -18,10 +16,8 @@ export const primaryThemeConfig: UserConfig = {
     config(md: MarkdownRenderer) {
       md.use(mermaidPlugin);
       md.use(taskCheckboxPlugin);
-      // md.use(footnote);
       md.use(mdItObsidianCallouts);
       md.use(markdownItObsidian, { enabled: true });
-      // md.use(mathjax3);
       md.use(mdItTaskLists, { enabled: true });
     },
   },

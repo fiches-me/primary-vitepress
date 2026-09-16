@@ -13,11 +13,6 @@ declare module "*.css" {
   export default css;
 }
 
-declare module "@mdit/plugin-footnote" {
-  const footnote: any;
-  export { footnote };
-}
-
 declare module "markdown-it-task-lists" {
   const plugin: any;
   export default plugin;
