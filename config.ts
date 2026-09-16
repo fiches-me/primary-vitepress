@@ -13,6 +13,7 @@ import markdownItObsidian from "markdown-it-obsidian";
  */
 export const primaryThemeConfig: UserConfig = {
   markdown: {
+    math: true,
     config(md: MarkdownRenderer) {
       md.use(mermaidPlugin);
       md.use(taskCheckboxPlugin);
