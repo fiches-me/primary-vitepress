@@ -30,7 +30,8 @@ body { overflow-x: hidden; }
 
 .VPSidebar {
   background: var(--vp-sidebar-bg-color);
-  border-right: 1px solid var(--vp-c-divider);
+  border: 0px;
+  border-right: 0px solid var(--vp-c-divider);
   padding: calc(var(--vp-nav-height) + 18px) 14px 24px;
 }
 .VPSidebarItem.level-0 > .item > .text {
@@ -91,4 +92,9 @@ body { overflow-x: hidden; }
     border: 0;
     border-radius: 0;
   }
+}
+
+.VPSidebarItem > .item > .text,
+.VPSidebarItem > .item > .VPLink{
+  padding-inline: 4px;
 }
