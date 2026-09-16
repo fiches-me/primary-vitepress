@@ -1,65 +1,39 @@
 {
   "name": "primary-vitepress",
-  "version": "1.1.2",
-  "description": "Primary implementation on Vitepress",
+  "version": "1.1.3",
   "type": "module",
-  "main": "./index.ts",
-  "module": "./index.ts",
-  "types": "./index.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./index.ts",
-      "import": "./index.ts"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
     },
     "./config": {
-      "types": "./config.ts",
-      "import": "./config.ts"
+      "types": "./dist/config.d.ts",
+      "import": "./dist/config.js"
     },
     "./plugins/mermaid": {
-      "types": "./plugins/vitepress-mermaid/index.ts",
-      "import": "./plugins/vitepress-mermaid/index.ts"
+      "types": "./dist/plugins/vitepress-mermaid/index.d.ts",
+      "import": "./dist/plugins/vitepress-mermaid/index.js"
     },
     "./plugins/task-checkbox": {
-      "types": "./plugins/markdown-it-task-checkbox.ts",
-      "import": "./plugins/markdown-it-task-checkbox.ts"
+      "types": "./dist/plugins/markdown-it-task-checkbox.d.ts",
+      "import": "./dist/plugins/markdown-it-task-checkbox.js"
     },
     "./style": "./layout.css"
   },
   "files": [
-    "index.ts",
-    "config.ts",
+    "dist",
     "*.css",
-    "plugins",
-    "env.d.ts",
+    "css",
+    "plugins/**/*.vue",
     "README.md"
   ],
   "scripts": {
-    "typecheck": "tsc"
-  },
-  "keywords": [
-    "vitepress",
-    "vitepress-theme",
-    "theme",
-    "mermaid",
-    "markdown-it"
-  ],
-  "license": "MIT",
-  "devDependencies": {
-    "@types/markdown-it": "^14.2.0",
-    "@types/node": "^26.5.1",
-    "prettier": "^3.3.3",
-    "typescript": "^5.5.4",
-    "vitepress": "^1.2.3"
-  },
-  "peerDependencies": {
-    "vue": "^3.0.0"
-  },
-  "dependencies": {
-    "@mdit/plugin-footnote": "^1.1.1",
-    "markdown-it-mathjax3": "^5.2.0",
-    "markdown-it-obsidian": "^1.1.0",
-    "markdown-it-obsidian-callouts": "^0.3.4",
-    "markdown-it-task-lists": "^2.1.1",
-    "mermaid": "^12.0.0"
+    "build": "tsc",
+    "prepublishOnly": "pnpm run build",
+    "typecheck": "tsc --noEmit"
   }
 }
