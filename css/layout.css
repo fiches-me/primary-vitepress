@@ -98,3 +98,50 @@ body { overflow-x: hidden; }
 .VPSidebarItem > .item > .VPLink{
   padding-inline: 4px;
 }
+
+/* Obsidian Wikilinks & Embeds */
+.vp-doc a.internal-link {
+  text-decoration: underline;
+  text-decoration-color: var(--vp-c-brand-soft);
+  text-underline-offset: 3px;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+.vp-doc a.internal-link:hover {
+  color: var(--vp-c-brand-2);
+  text-decoration-color: var(--vp-c-brand-1);
+}
+.vp-doc a.internal-link.is-unresolved {
+  opacity: 0.6;
+  text-decoration-style: dashed;
+  cursor: help;
+}
+.vp-doc a.internal-link.is-unresolved:hover {
+  opacity: 0.85;
+}
+.vp-doc .obsidian-embed.obsidian-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin: 0.5rem 0;
+  display: inline-block;
+}
+.vp-doc .obsidian-embed.obsidian-video,
+.vp-doc .obsidian-embed.obsidian-audio {
+  max-width: 100%;
+  margin: 0.75rem 0;
+  border-radius: 6px;
+  display: block;
+}
+.vp-doc .obsidian-embed.obsidian-pdf {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+  margin: 1rem 0;
+  display: block;
+}
+.vp-doc .obsidian-embed.obsidian-note-embed {
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  border-left: 3px solid var(--vp-c-brand-1);
+  background: var(--vp-c-bg-soft);
+  border-radius: 0 6px 6px 0;
+}

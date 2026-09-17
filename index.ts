@@ -4,6 +4,7 @@ import DefaultTheme from "vitepress/theme";
 import VitePressMermaid from "./plugins/vitepress-mermaid/index.vue";
 
 import "./css/fonts.css";
+import "./css/icons.css";
 import "./css/callouts.css";
 import "./css/colors.css";
 import "./css/checkboxes.css";
@@ -244,3 +245,14 @@ function initCheckboxes(): void {
   // Add new listener
   document.addEventListener("click", clickHandler);
 }
+
+export {
+  obsidianWikilinksPlugin,
+  VaultIndexer,
+  slugifyHeading,
+} from "./plugins/markdown-it-obsidian-wikilinks.js";
+export type {
+  ObsidianWikilinksOptions,
+  ResolvedLink,
+  VaultFile,
+} from "./plugins/markdown-it-obsidian-wikilinks.js";

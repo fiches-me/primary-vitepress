@@ -23,7 +23,3 @@ declare module "markdown-it-obsidian-callouts" {
   export default plugin;
 }
 
-declare module "markdown-it-obsidian" {
-  const plugin: any;
-  export default plugin;
-}
